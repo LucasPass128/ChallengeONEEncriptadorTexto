@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="style2.css"> <!-- Enlace al archivo CSS -->
+</head>
+<body>
+
+    <!-- Contenedor principal -->
+
+<main>
+        
+        <!-- Sección para ingresar el texto -->
+        <section class="main--text-input">
+            <textarea
+                id="text"
+                autofocus
+                onkeyup="heightArea()"
+                placeholder="Ingrese el texto aquí"
+            ></textarea>
+        </section>
+
+        <!-- Sección de botones -->
+        <section class="main--buttons">
+            <!-- Alerta para el usuario -->
+            <div class="alert">
+                <p>Solo letras minúsculas y sin acentos</p>
+            </div>
+
+            <!-- Botones de encriptar y desencriptar -->
+            <div class="buttons">
+                <button class="encriptar" id="encriptar" onclick="encriptar()">
+                    Encriptar
+                </button>
+                <button class="desencriptar" id="desencriptar" onclick="desencriptar()">
+                    Desencriptar
+                </button>
+            </div>
+        </section>
+
+        <!-- Transformaciones de texto -->
+        <section class="main--text-transforms">
+            <!-- Mensaje para cuando no hay texto -->
+            <div class="emptymessage" id="emptymessage">
+                <span>Ningún mensaje fue encontrado</span>
+                <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
+
+            <!-- Área de transformaciones de texto -->
+            <div class="main--text-transforms-area" id="texttransform_area">
+                <div class="texttransform" id="texttransform"></div>
+                <!-- Botón para copiar texto transformado -->
+                <button onclick="clipboardRun()">Copiar</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Advertencia para el usuario -->
+    <div class="warning" id="warning" onclick="closeWarning()">
+        <p>El texto ingresado debe ser solo en minúsculas y sin acentos.</p>
+    </div>
+
+    <!-- Pie de página -->
+  <footer>
+    <p>&copy; 2024 Passerini Lucas Pablo Todos los derechos reservados.</p>
+  </footer>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
